@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pig Latin Translator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="./js/otdayomcay.js"></script>
+    <!-- favicon -->
+</head>
+<body>
+    <h1>Ot-Day Om-Cay</h1>
+    <h2>Pig Latin Translator</h2>
+    <!-- LOGO -->
+    
+    <!-- TRANSLATE TEXT -->
+    <div class="form-group">
+        <label for="textToTranslate">Enter text to translate:</label>
+        <textarea class="form-control" rows="5" id="textToTranslate"></textarea>
+        <button type="button" class="btn btn-primary" onclick="translateText()">Translate</button>
+    </div>
+    
+    <div id="translationDiv">
+        <p id="translation"></p>
+    </div>
+    <!-- /TRANSLATE TEXT -->
+    
+    <!-- TRANSLATE FILE -->
+    <!-- /TRANSLATE FILE -->
+    
+    <!-- FOOTER -->
+	<div class="container-fluid mt-5" id="footer">
+		<p id="copy"></p>
+	</div>
+	<!-- /FOOTER -->
+
+</body>
+</html>
