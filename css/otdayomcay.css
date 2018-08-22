@@ -1,9 +1,44 @@
+body {
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+#contact {
+    margin: 0px 0px 60px 0px;    
+}
+
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
+    background-color: #DA6562;
+    color: #FFD700;
+    padding: 5px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    margin: 15px 0px 2px 0px;
+}
+
+.jumbotron {
+    background-color: #DA6562;
+    color: #FFD700;
+    padding: 20px;
+}
+
+#translationDiv {
+    margin: 0px 0px 40px 0px;
+    min-width: 320px;
+    min-height: 260px;
+    border: solid black 2px;
+    background-image: linear-gradient(to bottom right, #F8ECC2, #F4F4E2);
 }

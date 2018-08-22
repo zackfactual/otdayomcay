@@ -123,5 +123,5 @@ function capitalize(latinWord) {
 // auto-update copyright
 $('document').ready(function copyright() {
     var year = (new Date).getFullYear();
-    $("#copy").html("&copy; " + year + " — Zachary Velcoff");
+    $("#copy").append("&copy; " + year + " — Zachary Velcoff");
 });

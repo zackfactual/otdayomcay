@@ -2,54 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Pig Latin Translator</title>
+    <title>otDay omCay | A Pig Latin Translator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/otdayomcay.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="./js/otdayomcay.js"></script>
     <!-- favicon -->
 </head>
 <body>
-    <h1>otDay omCay</h1>
-    <h2>Pig Latin Translator</h2>
-    <!-- LOGO -->
     
-    <!-- TRANSLATE TEXT -->
-    <div class="form-group">
-        <h3>Enter text to translate:</h3>
-        <textarea class="form-control" rows="5" id="textToTranslate"></textarea>
+    <!-- HEADER -->
+    <div class="jumbotron">
+        <h1>otDay omCay</h1>
+        <h2>A Pig Latin Translator</h2>
+        <!-- logo (align right) -->
+    </div>
+    <!-- /HEADER -->
 
-        <!-- ay, way, or yay radio buttons -->
-        <h4>Suffix for words starting with a vowel?</h4>
-        <input type="radio" name="suffix" id="ay" value="ay" checked/> ay<br>
-        <input type="radio" name="suffix" id="way" value="way" /> way<br>
-        <input type="radio" name="suffix" id="yay" value="yay" /> yay<br>
-        <!-- /ay, way, or yay radio buttons -->
+    <!-- MAIN -->
+    <div class="container">
+        <div class="form-group">
+            <h3>Enter text to translate:</h3>
+            <textarea class="form-control" rows="5" id="textToTranslate"></textarea>
 
-        <!-- capitalization radio buttons -->
-        <h4>Capitalization scheme?</h4>
-        <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked /> Pig Latin<br>
-        <input type="radio" name="capitalization" id="english" value="English" /> English<br>
-        <!-- /capitalization radio buttons -->
+            <!-- SUFFIX BUTTONS -->
+            <h4>Suffix for words starting with a vowel?</h4>
+            <input type="radio" name="suffix" id="ay" value="ay" checked/> ay<br>
+            <input type="radio" name="suffix" id="way" value="way" /> way<br>
+            <input type="radio" name="suffix" id="yay" value="yay" /> yay<br>
+            <!-- /SUFFIX BUTTONS -->
+
+            <!-- CAPITALIZATION BUTTONS -->
+            <h4>Capitalization scheme?</h4>
+            <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked /> Pig Latin<br>
+            <input type="radio" name="capitalization" id="english" value="English" /> English<br>
+            <!-- /CAPITALIZATION BUTTONS -->
+            
+            <br>
+            <button id="translateButton" type="button" class="btn btn-primary" onclick="translateText()">anslateTray!</button>
+        </div>
         
-        <br>
-        <button type="button" class="btn btn-primary" onclick="translateText()">Translate</button>
+        <!-- TRANSLATED TEXT -->
+        <div id="translationDiv">
+            <p id="translation"></p>
+        </div>
+        <!-- /TRANSLATED TEXT -->
+
+        <!-- FEEDBACK -->
+        <div id="contact">
+            <h4>Feedback:</h4>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/zachary-velcoff/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="LinkedIn">LinkedIn</a></li>
+                <li><a href="https://github.com/zackfactual" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub">GitHub</a></li>
+                <li><a href="mailto:zackfactual@gmail.com" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Email">Email</a></li>
+            </ul>
+        </div>
+        <!-- /FEEDBACK -->
     </div>
-    
-    <div id="translationDiv">
-        <p id="translation"></p>
-    </div>
-    <!-- /TRANSLATE TEXT -->
-    
-    <!-- TRANSLATE FILE -->
-    <!-- /TRANSLATE FILE -->
-    
+
     <!-- FOOTER -->
 	<footer class="footer">
-        <span id="copy"></span>
+        <span id="copy">&nbsp;</span>
     </footer>
     <!-- /FOOTER -->
     
