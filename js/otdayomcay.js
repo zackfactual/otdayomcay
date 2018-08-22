@@ -56,8 +56,12 @@ function translateText() {
                         else {
                             for (j = 0; j < charArray.length; j++) {
                                 // build up consonant cluster
-                                if (CONSONANTS.includes(charArray[j])) {
+                                if (CONSONANTS.includes(charArray[j]) && j != charArray.length - 1) {
                                     secondHalf += charArray[j];
+                                }
+                                // if the word has no vowels
+                                else if (CONSONANTS.includes(charArray[j]) && j == charArray.length - 1) {
+                                    latinWord = charArray.join("") + suffix
                                 }
                                 // assign firstHalf the joined wordArray from its current index to its end
                                 else {
