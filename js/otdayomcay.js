@@ -62,11 +62,14 @@ function translateText() {
                                 // assign firstHalf the joined wordArray from its current index to its end
                                 else {
                                     firstHalf = charArray.slice(j, charArray.length).join("");
-                                    secondHalf += suffix;
+                                    secondHalf += "ay";
                                     latinWord = firstHalf + secondHalf;
                                     break;
                                 }
                             }
+                        }
+                        if (document.getElementById("english").checked && /[A-Z]/.test(latinWord)) {
+                            latinWord = capitalize(latinWord);
                         }
                         // display results
                         document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
@@ -110,4 +113,9 @@ function readSuffix() {
         suffix = "yay";
     }
     return suffix;
+}
+
+function capitalize(latinWord) {
+    latinWord = latinWord.toLowerCase();
+    return latinWord.charAt(0).toUpperCase() + latinWord.substr(1);
 }
