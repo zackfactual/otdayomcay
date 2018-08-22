@@ -2,52 +2,57 @@
 var VOWELS = ["a","e","i","o","u","A","E","I","O","U"]
 var CONSONANTS = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z","B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"];
 
-function translateText(){    
+function translateText() {    
     // clear translation div
     document.getElementById("translation").innerHTML = "";
     
     // assign input to a variable
     var textBlock = document.getElementById("textToTranslate").value;
     
-    // split input into an array of words
-    textBlock = textBlock.split(" ");
+    // split input into array of paragraphs
+    paragraphArray = textBlock.split("\n")
 
-    // iterate over words
-    for (i = 0; i < textBlock.length; i++) { 
-        var latinWord = "";
-        // split the word into a character array
-        var wordArray = textBlock[i].split("");
-        var firstHalf = "";
-        var secondHalf = "";
-
-        // trim and store leading and trailing punctuation from wordArray
-        var leadingPunctuation = "";
-        var trailingPunctuation = "";
-        [wordArray, leadingPunctuation] = trimLeadingPunctuation(wordArray, leadingPunctuation);
-        [wordArray, trailingPunctuation] = trimTrailingPunctuation(wordArray, trailingPunctuation);
-
-        // if word starts with a vowel
-        if(VOWELS.includes(wordArray[0])) {
-            latinWord = wordArray.join("") + "ay";
-        }
-        // if word starts with a consonant or consonant cluster
-        else {
-            for (j = 0; j < wordArray.length; j++) {
-                // build up consonant cluster
-                if (CONSONANTS.includes(wordArray[j])) {
-                    secondHalf += wordArray[j];
-                }
-                // assign firstHalf the joined wordArray from its current index to its end
-                else {
-                    firstHalf = wordArray.slice(j, wordArray.length).join("");
-                    secondHalf += "ay";
-                    latinWord = firstHalf + secondHalf;
-                    break;
+    // split each paragraph into an array of words
+    for (k = 0; k < paragraphArray.length; k++) {
+        var wordArray = paragraphArray[k].split(" ");
+        
+        // split each word into a character array
+        for (i = 0; i < wordArray.length; i++) { 
+            var latinWord = "";
+            charArray = wordArray[i].split("");
+            var firstHalf = "";
+            var secondHalf = "";
+    
+            // trim and store leading and trailing punctuation from wordArray
+            var leadingPunctuation = "";
+            var trailingPunctuation = "";
+            [charArray, leadingPunctuation] = trimLeadingPunctuation(charArray, leadingPunctuation);
+            [charArray, trailingPunctuation] = trimTrailingPunctuation(charArray, trailingPunctuation);
+    
+            // if word starts with a vowel
+            if(VOWELS.includes(charArray[0])) {
+                latinWord = charArray.join("") + "ay";
+            }
+            // if word starts with a consonant or consonant cluster
+            else {
+                for (j = 0; j < charArray.length; j++) {
+                    // build up consonant cluster
+                    if (CONSONANTS.includes(charArray[j])) {
+                        secondHalf += charArray[j];
+                    }
+                    // assign firstHalf the joined wordArray from its current index to its end
+                    else {
+                        firstHalf = charArray.slice(j, charArray.length).join("");
+                        secondHalf += "ay";
+                        latinWord = firstHalf + secondHalf;
+                        break;
+                    }
                 }
             }
+            // display results
+            document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
         }
-        // display results
-        document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
+        document.getElementById("translation").innerHTML += "<br>";
     }
 }
 
