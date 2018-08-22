@@ -23,14 +23,12 @@ function translateText(){
         // trim and store leading and trailing punctuation from wordArray
         var leadingPunctuation = "";
         var trailingPunctuation = "";
-        // FIX
-        wordArray = trimLeadingPunctuation(wordArray);
-        wordArray = trimTrailingPunctuation(wordArray);
+        [wordArray, leadingPunctuation] = trimLeadingPunctuation(wordArray, leadingPunctuation);
+        [wordArray, trailingPunctuation] = trimTrailingPunctuation(wordArray, trailingPunctuation);
 
         // if word starts with a vowel
         if(VOWELS.includes(wordArray[0])) {
-            // append "ay" (way? yay?) to it and move on with your life
-            latinWord = textBlock[i] + "ay";
+            latinWord = wordArray.join("") + "ay";
         }
         // if word starts with a consonant or consonant cluster
         else {
@@ -54,21 +52,21 @@ function translateText(){
 }
 
 // recursive function to trim leading punctuation from an array of characters
-function trimLeadingPunctuation(charArray) {
+function trimLeadingPunctuation(charArray, leadingPunct) {
     if(!VOWELS.includes(charArray[0]) && !CONSONANTS.includes(charArray[0])) {
-        //leadingPunctuation += charArray[0];
+        leadingPunct += charArray[0];
         charArray = charArray.slice(1);
-        trimLeadingPunctuation(charArray);
+        return trimLeadingPunctuation(charArray, leadingPunct);
     }
-    return charArray;
+    return [charArray, leadingPunct];
 }
 
 // recursive function to trim trailing punctuation from an array of characters
-function trimTrailingPunctuation(charArray) {
+function trimTrailingPunctuation(charArray, trailingPunct) {
     if(!VOWELS.includes(charArray[charArray.length - 1]) && !CONSONANTS.includes(charArray[charArray.length - 1])) {
-        //trailingPunctuation += charArray[charArray.length];
+        trailingPunct = charArray[charArray.length - 1] + trailingPunct;
         charArray.splice(-1);
-        trimTrailingPunctuation(charArray);
+        return trimTrailingPunctuation(charArray, trailingPunct);
     }
-    return charArray;
+    return [charArray, trailingPunct];
 }
