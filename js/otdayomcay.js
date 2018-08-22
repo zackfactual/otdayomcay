@@ -14,45 +14,51 @@ function translateText() {
 
     // split each paragraph into an array of words
     for (k = 0; k < paragraphArray.length; k++) {
-        var wordArray = paragraphArray[k].split(" ");
+        if (paragraphArray[k].length == 0)
+        {
+            document.getElementById("translation").innerHTML += "<br>";
+        }
+        else {
+            var wordArray = paragraphArray[k].split(" ");
+            
+            // split each word into a character array
+            for (i = 0; i < wordArray.length; i++) { 
+                var latinWord = "";
+                charArray = wordArray[i].split("");
+                var firstHalf = "";
+                var secondHalf = "";
         
-        // split each word into a character array
-        for (i = 0; i < wordArray.length; i++) { 
-            var latinWord = "";
-            charArray = wordArray[i].split("");
-            var firstHalf = "";
-            var secondHalf = "";
-    
-            // trim and store leading and trailing punctuation from wordArray
-            var leadingPunctuation = "";
-            var trailingPunctuation = "";
-            [charArray, leadingPunctuation] = trimLeadingPunctuation(charArray, leadingPunctuation);
-            [charArray, trailingPunctuation] = trimTrailingPunctuation(charArray, trailingPunctuation);
-    
-            // if word starts with a vowel
-            if(VOWELS.includes(charArray[0])) {
-                latinWord = charArray.join("") + "ay";
-            }
-            // if word starts with a consonant or consonant cluster
-            else {
-                for (j = 0; j < charArray.length; j++) {
-                    // build up consonant cluster
-                    if (CONSONANTS.includes(charArray[j])) {
-                        secondHalf += charArray[j];
-                    }
-                    // assign firstHalf the joined wordArray from its current index to its end
-                    else {
-                        firstHalf = charArray.slice(j, charArray.length).join("");
-                        secondHalf += "ay";
-                        latinWord = firstHalf + secondHalf;
-                        break;
+                // trim and store leading and trailing punctuation from wordArray
+                var leadingPunctuation = "";
+                var trailingPunctuation = "";
+                [charArray, leadingPunctuation] = trimLeadingPunctuation(charArray, leadingPunctuation);
+                [charArray, trailingPunctuation] = trimTrailingPunctuation(charArray, trailingPunctuation);
+        
+                // if word starts with a vowel
+                if(VOWELS.includes(charArray[0])) {
+                    latinWord = charArray.join("") + "ay";
+                }
+                // if word starts with a consonant or consonant cluster
+                else {
+                    for (j = 0; j < charArray.length; j++) {
+                        // build up consonant cluster
+                        if (CONSONANTS.includes(charArray[j])) {
+                            secondHalf += charArray[j];
+                        }
+                        // assign firstHalf the joined wordArray from its current index to its end
+                        else {
+                            firstHalf = charArray.slice(j, charArray.length).join("");
+                            secondHalf += "ay";
+                            latinWord = firstHalf + secondHalf;
+                            break;
+                        }
                     }
                 }
+                // display results
+                document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
             }
-            // display results
-            document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
-        }
-        document.getElementById("translation").innerHTML += "<br>";
+            document.getElementById("translation").innerHTML += "<br>";
+        } 
     }
 }
 
