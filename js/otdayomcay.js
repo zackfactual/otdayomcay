@@ -119,3 +119,9 @@ function capitalize(latinWord) {
     latinWord = latinWord.toLowerCase();
     return latinWord.charAt(0).toUpperCase() + latinWord.substr(1);
 }
+
+// auto-update copyright
+$('document').ready(function copyright() {
+    var year = (new Date).getFullYear();
+    $("#copy").html("&copy; " + year + " — Zachary Velcoff");
+});

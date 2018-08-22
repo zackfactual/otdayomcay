@@ -5,6 +5,7 @@
     <title>Pig Latin Translator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/otdayomcay.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -12,26 +13,26 @@
     <!-- favicon -->
 </head>
 <body>
-    <h1>Ot-Day Om-Cay</h1>
+    <h1>otDay omCay</h1>
     <h2>Pig Latin Translator</h2>
     <!-- LOGO -->
     
     <!-- TRANSLATE TEXT -->
     <div class="form-group">
-        <label for="textToTranslate">Enter text to translate:</label>
+        <h3>Enter text to translate:</h3>
         <textarea class="form-control" rows="5" id="textToTranslate"></textarea>
 
         <!-- ay, way, or yay radio buttons -->
-        <h3>Ay, Way, or Yay?</h3>
-        <input type="radio" name="suffix" id="ay" value="ay" checked/>
-        <input type="radio" name="suffix" id="way" value="way" />
-        <input type="radio" name="suffix" id="yay" value="yay" />
+        <h4>Suffix for words starting with a vowel?</h4>
+        <input type="radio" name="suffix" id="ay" value="ay" checked/> ay<br>
+        <input type="radio" name="suffix" id="way" value="way" /> way<br>
+        <input type="radio" name="suffix" id="yay" value="yay" /> yay<br>
         <!-- /ay, way, or yay radio buttons -->
 
         <!-- capitalization radio buttons -->
-        <h3>Capitalization?</h3>
-        <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked />
-        <input type="radio" name="capitalization" id="english" value="English" />
+        <h4>Capitalization scheme?</h4>
+        <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked /> Pig Latin<br>
+        <input type="radio" name="capitalization" id="english" value="English" /> English<br>
         <!-- /capitalization radio buttons -->
         
         <br>
@@ -47,9 +48,9 @@
     <!-- /TRANSLATE FILE -->
     
     <!-- FOOTER -->
-	<div class="container-fluid mt-5" id="footer">
-		<p id="copy"></p>
-	</div>
+	<footer class="footer">
+        <span id="copy"></span>
+    </footer>
     <!-- /FOOTER -->
     
 </body>
