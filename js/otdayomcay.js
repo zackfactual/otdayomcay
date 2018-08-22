@@ -11,22 +11,29 @@ function translateText(){
     
     // split input into an array of words
     textBlock = textBlock.split(" ");
-    
+
     // iterate over words
     for (i = 0; i < textBlock.length; i++) { 
         var latinWord = "";
+        // split the word into a character array
+        var wordArray = textBlock[i].split("");
+        var firstHalf = "";
+        var secondHalf = "";
+
+        // trim and store leading and trailing punctuation from wordArray
+        var leadingPunctuation = "";
+        var trailingPunctuation = "";
+        // FIX
+        wordArray = trimLeadingPunctuation(wordArray);
+        wordArray = trimTrailingPunctuation(wordArray);
+
         // if word starts with a vowel
-        if(VOWELS.includes(textBlock[i].charAt(0))) {
+        if(VOWELS.includes(wordArray[0])) {
             // append "ay" (way? yay?) to it and move on with your life
             latinWord = textBlock[i] + "ay";
         }
         // if word starts with a consonant or consonant cluster
         else {
-            // split the word into a character array
-            var wordArray = textBlock[i].split("");
-            var firstHalf = "";
-            var secondHalf = "";
-        
             for (j = 0; j < wordArray.length; j++) {
                 // build up consonant cluster
                 if (CONSONANTS.includes(wordArray[j])) {
@@ -41,9 +48,27 @@ function translateText(){
                 }
             }
         }
-        // DEAL WITH PUNCTUATION IN AND AT END OF WORDS
-        
         // display results
-        document.getElementById("translation").append(latinWord + " ");
+        document.getElementById("translation").append(leadingPunctuation + latinWord +  trailingPunctuation + " ");
     }
+}
+
+// recursive function to trim leading punctuation from an array of characters
+function trimLeadingPunctuation(charArray) {
+    if(!VOWELS.includes(charArray[0]) && !CONSONANTS.includes(charArray[0])) {
+        //leadingPunctuation += charArray[0];
+        charArray = charArray.slice(1);
+        trimLeadingPunctuation(charArray);
+    }
+    return charArray;
+}
+
+// recursive function to trim trailing punctuation from an array of characters
+function trimTrailingPunctuation(charArray) {
+    if(!VOWELS.includes(charArray[charArray.length - 1]) && !CONSONANTS.includes(charArray[charArray.length - 1])) {
+        //trailingPunctuation += charArray[charArray.length];
+        charArray.splice(-1);
+        trimTrailingPunctuation(charArray);
+    }
+    return charArray;
 }
