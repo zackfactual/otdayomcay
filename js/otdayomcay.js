@@ -19,6 +19,10 @@ function translateText() {
             document.getElementById("translation").innerHTML += "<br>";
         }
         else {
+            // deal with indentation
+            if(paragraphArray[k].startsWith("\t")) {
+                document.getElementById("translation").innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
             var wordArray = paragraphArray[k].split(" "); 
             
             for (i = 0; i < wordArray.length; i++) {
@@ -31,7 +35,7 @@ function translateText() {
                     // split each word into a character array
                     charArray = wordArray[i].split("");
                     // regex to deal with non-alphabetical "words"
-                    if (/^[\W_]+$/.test(charArray)) {
+                    if (/^[\W_0-9]+$/.test(charArray)) {
                         document.getElementById("translation").append(charArray.join("") + " ");
                     }
                     else {
