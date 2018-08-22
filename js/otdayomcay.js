@@ -46,10 +46,11 @@ function translateText() {
                         var trailingPunctuation = "";
                         [charArray, leadingPunctuation] = trimLeadingPunctuation(charArray, leadingPunctuation);
                         [charArray, trailingPunctuation] = trimTrailingPunctuation(charArray, trailingPunctuation);
-                
+                        
+                        suffix = readSuffix();
                         // if word starts with a vowel
                         if(VOWELS.includes(charArray[0])) {
-                            latinWord = charArray.join("") + "ay";
+                            latinWord = charArray.join("") + suffix;
                         }
                         // if word starts with a consonant or consonant cluster
                         else {
@@ -61,7 +62,7 @@ function translateText() {
                                 // assign firstHalf the joined wordArray from its current index to its end
                                 else {
                                     firstHalf = charArray.slice(j, charArray.length).join("");
-                                    secondHalf += "ay";
+                                    secondHalf += suffix;
                                     latinWord = firstHalf + secondHalf;
                                     break;
                                 }
@@ -95,4 +96,18 @@ function trimTrailingPunctuation(charArray, trailingPunct) {
         return trimTrailingPunctuation(charArray, trailingPunct);
     }
     return [charArray, trailingPunct];
+}
+
+function readSuffix() {
+    var suffix = "";
+    if (document.getElementById("ay").checked) {
+        suffix = "ay";
+    }
+    else if (document.getElementById("way").checked) {
+        suffix = "way";
+    }
+    else {
+        suffix = "yay";
+    }
+    return suffix;
 }

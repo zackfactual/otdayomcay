@@ -20,6 +20,21 @@
     <div class="form-group">
         <label for="textToTranslate">Enter text to translate:</label>
         <textarea class="form-control" rows="5" id="textToTranslate"></textarea>
+
+        <!-- ay, way, or yay radio buttons -->
+        <h3>Ay, Way, or Yay?</h3>
+        <input type="radio" name="suffix" id="ay" value="ay" checked/>
+        <input type="radio" name="suffix" id="way" value="way" />
+        <input type="radio" name="suffix" id="yay" value="yay" />
+        <!-- /ay, way, or yay radio buttons -->
+
+        <!-- capitalization radio buttons -->
+        <h3>Capitalization?</h3>
+        <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked />
+        <input type="radio" name="capitalization" id="english" value="English" />
+        <!-- /capitalization radio buttons -->
+        
+        <br>
         <button type="button" class="btn btn-primary" onclick="translateText()">Translate</button>
     </div>
     
