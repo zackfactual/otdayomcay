@@ -10,7 +10,7 @@ function translateText() {
     var textBlock = document.getElementById("textToTranslate").value;
     
     // split input into array of paragraphs
-    paragraphArray = textBlock.split("\n")
+    var paragraphArray = textBlock.split("\n")
 
     // split each paragraph into an array of words
     for (k = 0; k < paragraphArray.length; k++) {
@@ -125,7 +125,7 @@ function capitalize(latinWord) {
 }
 
 // auto-update copyright
-$('document').ready(function copyright() {
+$('document').ready(function setCopyright() {
     var year = (new Date).getFullYear();
     $("#copy").append("&copy; " + year + " — Zachary Velcoff");
 });

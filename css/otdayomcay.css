@@ -33,6 +33,7 @@ h4 {
     background-color: #DA6562;
     color: #FFD700;
     padding: 20px;
+    border-radius: 0%;
 }
 
 #translationDiv {
@@ -41,4 +42,5 @@ h4 {
     min-height: 260px;
     border: solid black 2px;
     background-image: linear-gradient(to bottom right, #F8ECC2, #F4F4E2);
+    border-radius: 5%;
 }
