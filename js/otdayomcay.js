@@ -4,6 +4,7 @@ var CONSONANTS = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t
 
 function translateText() {    
     // clear translation div
+    document.getElementById("translationDiv").style.display = "block";
     document.getElementById("translation").innerHTML = "";
     
     // assign input to a variable

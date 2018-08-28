@@ -2,10 +2,6 @@ body {
     font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-#contact {
-    margin: 0px 0px 60px 0px;    
-}
-
 .footer {
     position: fixed;
     left: 0;
@@ -26,21 +22,31 @@ h3 {
 
 h4 {
     font-size: 18px;
-    margin: 15px 0px 2px 0px;
 }
 
 .jumbotron {
     background-color: #DA6562;
     color: #FFD700;
-    padding: 20px;
+    padding: 5px 0px 5px 20px;
     border-radius: 0%;
+    margin-bottom: 7px;
+}
+
+#translateButton {
+    margin-top: 14px;
 }
 
 #translationDiv {
-    margin: 0px 0px 40px 0px;
-    min-width: 320px;
-    min-height: 260px;
+    display: none;
     border: solid black 2px;
     background-image: linear-gradient(to bottom right, #F8ECC2, #F4F4E2);
-    border-radius: 5%;
+    padding: 15px 15px 0px 15px;
+}
+
+#textToTranslate {
+    margin-bottom: 7px;
+}
+
+#contact {
+    margin-top: 14px;
 }
