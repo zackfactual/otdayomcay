@@ -30,23 +30,22 @@
             <textarea class="form-control" rows="3" id="textToTranslate"></textarea>
 
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <!-- SUFFIX BUTTONS -->
-                        <h4>Suffixes?</h4>
-                        <input type="radio" name="suffix" id="ay" value="ay" checked/> ay<br>
-                        <input type="radio" name="suffix" id="way" value="way" /> way<br>
-                        <input type="radio" name="suffix" id="yay" value="yay" /> yay<br>
-                        <!-- /SUFFIX BUTTONS -->
-                    </div>
-                    <div class="col">
-                        <!-- CAPITALIZATION BUTTONS -->
-                        <h4>Capitals?</h4>
-                        <input type="radio" name="capitalization" id="pigLatin" value="Pig Latin" checked /> Pig Latin<br>
-                        <input type="radio" name="capitalization" id="english" value="English" /> English<br>
-                        <!-- /CAPITALIZATION BUTTONS -->
-                    </div>
-                </div>
+                <!-- SUFFIX BUTTONS -->
+                <h4>Vowel-first suffixes?</h4>
+                <select id="suffixes">
+                    <option value="ay" checked>ay</option>
+                    <option value="way" checked>way</option>
+                    <option value="yay" checked>yay</option>
+                </select>
+                <!-- /SUFFIX BUTTONS -->
+            
+                <!-- CAPITALIZATION BUTTONS -->
+                <h4>Capitalization scheme?</h4>
+                <select id="capitals">
+                    <option value="pigLatin" selected>Pig Latin</option>
+                    <option value="english">English</option>
+                </select>
+                <!-- /CAPITALIZATION BUTTONS -->
             </div>
             <button id="translateButton" type="button" class="btn btn-primary" onclick="translateText()">anslateTray!</button>
         </div>

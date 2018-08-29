@@ -13,15 +13,15 @@ body {
 }
 
 h2 {
-    font-size: 22px;
-}
-
-h3 {
     font-size: 20px;
 }
 
-h4 {
+h3 {
     font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
 }
 
 .jumbotron {
@@ -32,8 +32,8 @@ h4 {
     margin-bottom: 7px;
 }
 
-#translateButton {
-    margin-top: 14px;
+select {
+    margin-bottom: 14px;
 }
 
 #translationDiv {
@@ -48,5 +48,5 @@ h4 {
 }
 
 #contact {
-    margin-top: 14px;
+    margin: 14px 0px 45px 0px;
 }

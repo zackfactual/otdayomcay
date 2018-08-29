@@ -73,7 +73,7 @@ function translateText() {
                                 }
                             }
                         }
-                        if (document.getElementById("english").checked && /[A-Z]/.test(latinWord)) {
+                        if (document.getElementById("capitals").value == "english" && /[A-Z]/.test(latinWord)) {
                             latinWord = capitalize(latinWord);
                         }
                         // display results
@@ -108,10 +108,10 @@ function trimTrailingPunctuation(charArray, trailingPunct) {
 
 function readSuffix() {
     var suffix = "";
-    if (document.getElementById("ay").checked) {
+    if (document.getElementById("suffixes").value == "ay") {
         suffix = "ay";
     }
-    else if (document.getElementById("way").checked) {
+    else if (document.getElementById("suffixes").value == "way") {
         suffix = "way";
     }
     else {
