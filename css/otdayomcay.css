@@ -30,8 +30,22 @@ h4 {
     padding: 5px 0px 5px 20px;
     border-radius: 0%;
     margin-bottom: 7px;
+    min-width: 352px;
 }
 
+.jumbotron div img {
+    margin-top: 9px;
+    position: absolute;
+    right: 15%;
+}
+
+#title-col {
+    width: 70%;
+}
+
+#image-col {
+    width: 30%;
+}
 select {
     margin-bottom: 14px;
 }
