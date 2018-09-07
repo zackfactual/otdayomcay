@@ -19,8 +19,7 @@ function translateText() {
 
     // split each paragraph into an array of words
     for (k = 0; k < paragraphArray.length; k++) {
-        if (paragraphArray[k].length == 0)
-        {
+        if (paragraphArray[k].length == 0) {
             document.getElementById("translation").innerHTML += "<br>";
         }
         else {

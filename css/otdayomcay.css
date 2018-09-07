@@ -55,6 +55,7 @@ select {
     border: solid black 2px;
     background-image: linear-gradient(to bottom right, #F8ECC2, #F4F4E2);
     padding: 15px 15px 0px 15px;
+    word-wrap: break-word;
 }
 
 #textToTranslate {
