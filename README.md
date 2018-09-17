@@ -32,8 +32,8 @@ My next steps will be:
 Feel free to help with any of that if you're interested!
 
 # Credits
-Jeff Ondich for code and design feedback 
-Alex Zubrovich for logo
+Jeff Ondich, Elena Ondich, and Michael Strunk for code and design feedback 
+Alex Zubrovich for logo design
 
 # License
    GNU GENERAL PUBLIC LICENSE
