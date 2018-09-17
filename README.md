@@ -33,6 +33,7 @@ Feel free to help with any of that if you're interested!
 
 # Credits
 Jeff Ondich, Elena Ondich, and Michael Strunk for code and design feedback 
+
 Alex Zubrovich for logo design
 
 # License
